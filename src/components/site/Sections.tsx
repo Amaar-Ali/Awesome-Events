@@ -83,7 +83,9 @@ export function Transformation() {
               width={active.img.w}
               height={active.img.h}
               loading="lazy"
-              className="h-[46vh] w-full object-cover md:h-[70vh]"
+              className={`h-[46vh] w-full object-cover md:h-[70vh] ${
+                stage === 0 ? "grayscale-[0.55] brightness-75 contrast-110" : ""
+              }`}
             />
             <figcaption className="mt-4 flex flex-wrap justify-between gap-4">
               <span className="label text-foreground">{active.note}</span>
