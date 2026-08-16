@@ -42,8 +42,7 @@ export const Route = createFileRoute("/")({
           telephone: "+918447716668",
           address: {
             "@type": "PostalAddress",
-            streetAddress:
-              "House No. 121B, Street No. 12, near Radha Kishan Mandir, Sangam Vihar",
+            streetAddress: "House No. 121B, Street No. 12, near Radha Kishan Mandir, Sangam Vihar",
             addressLocality: "Delhi",
             postalCode: "110080",
             addressCountry: "IN",

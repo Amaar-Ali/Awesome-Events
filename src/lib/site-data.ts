@@ -13,7 +13,8 @@ export type MediaItem = {
   w: number;
   h: number;
   alt: string;
-  category: "venue" | "wedding" | "setup" | "celebration" | "production" | "corporate" | "destination";
+  category:
+    "venue" | "wedding" | "setup" | "celebration" | "production" | "corporate" | "destination";
   usedIn: string;
 };
 
@@ -99,8 +100,7 @@ export const media = {
 export const CONTACT = {
   phoneDisplay: "+91 84477 16668",
   tel: "tel:+918447716668",
-  address:
-    "House No. 121B, Street No. 12, near Radha Kishan Mandir, Sangam Vihar, Delhi 110080",
-  maps:
-    "https://www.google.com/maps/search/?api=1&query=House+No.+121B%2C+Street+No.+12%2C+near+Radha+Kishan+Mandir%2C+Sangam+Vihar%2C+Delhi+110080",
+  whatsapp: "https://wa.me/918447716668",
+  address: "House No. 121B, Street No. 12, near Radha Kishan Mandir, Sangam Vihar, Delhi 110080",
+  maps: "https://www.google.com/maps/search/?api=1&query=House+No.+121B%2C+Street+No.+12%2C+near+Radha+Kishan+Mandir%2C+Sangam+Vihar%2C+Delhi+110080",
 };

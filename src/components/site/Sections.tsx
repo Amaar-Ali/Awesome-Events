@@ -23,8 +23,8 @@ export function Statement() {
       </Reveal>
       <Reveal delay={220}>
         <p className="mt-14 max-w-lg text-sm leading-relaxed text-muted-foreground md:ml-auto md:mt-20">
-          From concept and décor to production, logistics and execution, we handle the
-          moving parts so you can experience the event instead of managing it.
+          From concept and décor to production, logistics and execution, we handle the moving parts
+          so you can experience the event instead of managing it.
         </p>
       </Reveal>
     </section>
@@ -121,15 +121,20 @@ export function Work() {
               the chaos<span className="text-primary">.</span>
             </h3>
             <p className="mt-6 max-w-sm text-sm leading-relaxed text-muted-foreground">
-              From intimate ceremonies to large-scale celebrations, we coordinate the
-              details, vendors, décor and production that keep the day moving.
+              From intimate ceremonies to large-scale celebrations, we coordinate the details,
+              vendors, décor and production that keep the day moving.
             </p>
             <ul className="label mt-6 flex flex-wrap gap-x-5 gap-y-2">
-              {["Planning", "Coordination", "Décor", "Production", "Entertainment", "Logistics"].map(
-                (s) => (
-                  <li key={s}>{s}</li>
-                ),
-              )}
+              {[
+                "Planning",
+                "Coordination",
+                "Décor",
+                "Production",
+                "Entertainment",
+                "Logistics",
+              ].map((s) => (
+                <li key={s}>{s}</li>
+              ))}
             </ul>
             <a
               href="#enquiry"
@@ -203,8 +208,7 @@ export function Work() {
             Some events
             <br />
             don&apos;t need
-            <br />
-            a reason<span className="text-primary">.</span>
+            <br />a reason<span className="text-primary">.</span>
           </h3>
           <ul className="label mt-6 flex flex-wrap gap-x-5 gap-y-2">
             {["Birthdays", "Private parties", "Themed celebrations", "Social events"].map((s) => (
@@ -254,13 +258,13 @@ export function Work() {
         </Reveal>
         <Reveal className="mt-8 grid gap-8 md:grid-cols-[1fr_1fr]">
           <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-            Planning beyond Delhi? We&apos;ll coordinate the details from the first site
-            visit to the final teardown.
+            Planning beyond Delhi? We&apos;ll coordinate the details from the first site visit to
+            the final teardown.
           </p>
           <div>
             <p className="label">
-              Delhi NCR · Noida · Gurugram · Faridabad · Jaipur · Chandigarh · Uttarakhand
-              — among others
+              Delhi NCR · Noida · Gurugram · Faridabad · Jaipur · Chandigarh · Uttarakhand — among
+              others
             </p>
             <a
               href="#enquiry"
@@ -440,8 +444,8 @@ export function About() {
           Events look effortless when someone is thinking about everything at once.
         </p>
         <p className="text-sm leading-relaxed text-muted-foreground">
-          That&apos;s what we do — plan the details, coordinate the people, build the
-          environment and keep the day moving.
+          That&apos;s what we do — plan the details, coordinate the people, build the environment
+          and keep the day moving.
         </p>
       </Reveal>
       <Reveal delay={220} className="mt-16 border-t border-border pt-8">
@@ -449,8 +453,8 @@ export function About() {
           Every event has its own scale.
         </h3>
         <p className="mt-6 max-w-lg text-sm leading-relaxed text-muted-foreground">
-          Tell us what you&apos;re planning, where it&apos;s happening and what you need
-          handled. We&apos;ll build the right scope around it.
+          Tell us what you&apos;re planning, where it&apos;s happening and what you need handled.
+          We&apos;ll build the right scope around it.
         </p>
         <a
           href="#enquiry"
@@ -541,6 +545,27 @@ export function Enquiry() {
             <form
               onSubmit={(e) => {
                 e.preventDefault();
+                const fd = new FormData(e.currentTarget);
+                const services = fd.getAll("services").join(", ") || "Not specified";
+                const body = [
+                  "Hi Awesome Event, I'd like to discuss planning an upcoming event.",
+                  "",
+                  `Name: ${fd.get("name") ?? ""}`,
+                  `Phone: ${fd.get("phone") ?? ""}`,
+                  `Email: ${fd.get("email") || "—"}`,
+                  `Type: ${fd.get("type") ?? ""}`,
+                  `Date: ${fd.get("date") || "—"}`,
+                  `Venue: ${fd.get("venue") || "—"}`,
+                  `Guests: ${fd.get("guests") || "—"}`,
+                  `Budget: ${fd.get("budget") || "—"}`,
+                  `Services: ${services}`,
+                  `Message: ${fd.get("message") || "—"}`,
+                ].join("\n");
+                window.open(
+                  `${CONTACT.whatsapp}?text=${encodeURIComponent(body)}`,
+                  "_blank",
+                  "noopener,noreferrer",
+                );
                 setSent(true);
               }}
               className="grid gap-8 md:grid-cols-2"
@@ -568,7 +593,13 @@ export function Enquiry() {
                 <label htmlFor="email" className="label">
                   Email
                 </label>
-                <input id="email" name="email" type="email" className={field} placeholder="you@email.com" />
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  className={field}
+                  placeholder="you@email.com"
+                />
               </div>
               <div>
                 <label htmlFor="type" className="label">
@@ -598,7 +629,14 @@ export function Enquiry() {
                 <label htmlFor="guests" className="label">
                   Estimated guests
                 </label>
-                <input id="guests" name="guests" type="number" min="1" className={field} placeholder="250" />
+                <input
+                  id="guests"
+                  name="guests"
+                  type="number"
+                  min="1"
+                  className={field}
+                  placeholder="250"
+                />
               </div>
               <div>
                 <label htmlFor="budget" className="label">
@@ -626,7 +664,13 @@ export function Enquiry() {
                 <label htmlFor="message" className="label">
                   Message
                 </label>
-                <textarea id="message" name="message" rows={3} className={field} placeholder="Tell us what you're planning" />
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={3}
+                  className={field}
+                  placeholder="Tell us what you're planning"
+                />
               </div>
 
               <button
@@ -649,9 +693,7 @@ export function Footer() {
   return (
     <footer className="border-t border-border bg-obsidian">
       <div className="mx-auto max-w-[1600px] px-5 pb-28 pt-20 md:px-10 md:pb-16">
-        <h2 className="display text-[16vw] leading-[0.82] md:text-[11vw]">
-          Awesome Event
-        </h2>
+        <h2 className="display text-[16vw] leading-[0.82] md:text-[11vw]">Awesome Event</h2>
         <p className="label mt-4">Weddings · Corporate · Celebrations · Production</p>
 
         <div className="mt-16 grid gap-10 border-t border-border pt-10 md:grid-cols-4">

@@ -45,16 +45,10 @@ export function Hero() {
             className="display relative z-20 text-[18vw] leading-[0.82] md:text-[12vw]"
             style={{ transform: `translateY(${-p * 70}px)` }}
           >
-            <span
-              className="enter-rise block"
-              style={{ animationDelay: "0.9s" }}
-            >
+            <span className="enter-rise block" style={{ animationDelay: "0.9s" }}>
               We Build
             </span>
-            <span
-              className="enter-rise block md:pl-[22vw]"
-              style={{ animationDelay: "1.05s" }}
-            >
+            <span className="enter-rise block md:pl-[22vw]" style={{ animationDelay: "1.05s" }}>
               The Moment<span className="text-primary">.</span>
             </span>
           </h1>
@@ -62,7 +56,10 @@ export function Hero() {
           {/* Central image panel */}
           <figure
             className="enter-unmask absolute left-1/2 top-[6%] z-10 hidden w-[27vw] max-w-[380px] -translate-x-1/2 md:block"
-            style={{ animationDelay: "0.35s", transform: `translate(-50%, ${-p * 40}px) scale(${1 + p * 0.1})` }}
+            style={{
+              animationDelay: "0.35s",
+              transform: `translate(-50%, ${-p * 40}px) scale(${1 + p * 0.1})`,
+            }}
           >
             <img
               src={media.heroMain.src}
@@ -113,7 +110,10 @@ export function Hero() {
         </div>
 
         {/* Mobile image */}
-        <figure className="enter-unmask relative z-10 mt-6 md:hidden" style={{ animationDelay: "0.4s" }}>
+        <figure
+          className="enter-unmask relative z-10 mt-6 md:hidden"
+          style={{ animationDelay: "0.4s" }}
+        >
           <img
             src={media.heroMain.src}
             alt={media.heroMain.alt}
@@ -128,8 +128,8 @@ export function Hero() {
           style={{ animationDelay: "1.3s" }}
         >
           <p className="max-w-md text-sm leading-relaxed text-muted-foreground">
-            Weddings, corporate experiences and celebrations — planned, designed and
-            executed from the first idea to the final guest.
+            Weddings, corporate experiences and celebrations — planned, designed and executed from
+            the first idea to the final guest.
           </p>
           <div className="flex flex-wrap items-center gap-x-6 gap-y-4">
             <span className="label">4.9 ★ · 60+ reviews · Delhi NCR</span>
@@ -139,10 +139,7 @@ export function Hero() {
             >
               Plan an Event
             </a>
-            <a
-              href="#work"
-              className="label link-underline text-foreground"
-            >
+            <a href="#work" className="label link-underline text-foreground">
               View our work
             </a>
           </div>
