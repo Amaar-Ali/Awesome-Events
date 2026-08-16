@@ -1,24 +1,89 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { Nav, MobileBar } from "@/components/site/Nav";
+import { Hero } from "@/components/site/Hero";
+import {
+  Statement,
+  Transformation,
+  Work,
+  Capabilities,
+  BeThere,
+  Process,
+  Proof,
+  About,
+  Enquiry,
+  Footer,
+} from "@/components/site/Sections";
 
-// No head() here: the home route inherits title/description/og/twitter from
-// __root.tsx, and ships no og:image so serve-time hosting can inject the
-// project's social preview (explicit og:image or latest screenshot).
+const TITLE = "Awesome Event | Wedding & Corporate Event Planner in Delhi NCR";
+const DESC =
+  "Awesome Event plans and executes weddings, corporate events, celebrations, destination events and event productions across Delhi NCR and beyond.";
+
 export const Route = createFileRoute("/")({
   component: Index,
+  head: () => ({
+    meta: [
+      { title: TITLE },
+      { name: "description", content: DESC },
+      { property: "og:title", content: TITLE },
+      { property: "og:description", content: DESC },
+      { property: "og:type", content: "website" },
+      { property: "og:url", content: "/" },
+      { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": ["LocalBusiness", "Organization"],
+          name: "Awesome Event",
+          description: DESC,
+          telephone: "+918447716668",
+          address: {
+            "@type": "PostalAddress",
+            streetAddress:
+              "House No. 121B, Street No. 12, near Radha Kishan Mandir, Sangam Vihar",
+            addressLocality: "Delhi",
+            postalCode: "110080",
+            addressCountry: "IN",
+          },
+          areaServed: [
+            "Delhi NCR",
+            "Noida",
+            "Gurugram",
+            "Faridabad",
+            "Jaipur",
+            "Chandigarh",
+            "Uttarakhand",
+          ],
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: "4.9",
+            reviewCount: "60",
+          },
+        }),
+      },
+    ],
+  }),
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <main>
+      <Nav />
+      <Hero />
+      <Statement />
+      <Transformation />
+      <Work />
+      <Capabilities />
+      <BeThere />
+      <Process />
+      <Proof />
+      <About />
+      <Enquiry />
+      <Footer />
+      <MobileBar />
+    </main>
   );
 }
