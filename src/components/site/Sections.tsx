@@ -40,7 +40,7 @@ export function Transformation() {
     { key: "During", img: media.setup, note: "Décor, rigging, lighting, vendors, timing." },
     { key: "After", img: media.heroVenue, note: "The room does the talking." },
   ];
-  const active = stages[stage];
+  const active = stages[stage] ?? stages[0]!;
 
   return (
     <section className="border-y border-border bg-graphite/40">
