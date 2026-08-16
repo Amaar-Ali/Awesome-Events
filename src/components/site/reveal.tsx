@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 
-export function useReveal<T extends HTMLElement>(threshold = 0.2) {
+export function useReveal<T extends HTMLElement>(threshold = 0.01) {
   const ref = useRef<T | null>(null);
   const [shown, setShown] = useState(false);
 
