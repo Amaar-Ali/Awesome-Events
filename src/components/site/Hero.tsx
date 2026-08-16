@@ -42,7 +42,7 @@ export function Hero() {
         {/* Composition */}
         <div className="relative mt-6 flex-1 md:mt-10">
           <h1
-            className="display relative z-20 text-[19vw] leading-[0.82] md:text-[13.5vw]"
+            className="display relative z-20 text-[18vw] leading-[0.82] md:text-[12vw]"
             style={{ transform: `translateY(${-p * 70}px)` }}
           >
             <span
@@ -52,7 +52,7 @@ export function Hero() {
               We Build
             </span>
             <span
-              className="enter-rise block md:pl-[26vw]"
+              className="enter-rise block md:pl-[22vw]"
               style={{ animationDelay: "1.05s" }}
             >
               The Moment<span className="text-primary">.</span>
